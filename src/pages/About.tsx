@@ -1,5 +1,10 @@
+import { Navbar } from '../components/molecules/Navbar';
+
 export const About = () => {
   return (
-    <h1>Sobre Nosotros</h1>
+    <>
+      <Navbar />
+      <h1>Sobre Nosotros</h1>
+    </>
   );
 };

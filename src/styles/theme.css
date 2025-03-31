@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-hv-grey: #c0ccd8;
+  --color-hv-light-blue: #aacbed;
+  --color-hv-blue-grey-1: #80a1c1;
+  --color-hv-blue-grey-2: #577ea5;
+  --color-hv-blue: #1d6bba;
+}

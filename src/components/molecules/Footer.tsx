@@ -4,11 +4,11 @@ import { tv } from 'tailwind-variants';
 import { Link } from 'react-router-dom';
 
 const footer = tv({
-  base: "bg-hv-blue lg:px-40 py-10 absolute bottom-0 w-screen"
+  base: "bg-hv-blue lg:px-40 py-10 w-full"
 });
 
 const footercontainer = tv({
-  base: "grid md:grid-cols-4 md:justify-items-center"
+  base: "grid md:grid-cols-4 md:justify-items-center gap-4"
 });
 
 const columncontainer = tv({

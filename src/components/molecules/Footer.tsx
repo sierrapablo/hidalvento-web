@@ -4,15 +4,15 @@ import { tv } from 'tailwind-variants';
 import { Link } from 'react-router-dom';
 
 const footer = tv({
-  base: "bg-hv-blue px-80 py-10 absolute bottom-0 w-screen"
+  base: "bg-hv-blue lg:px-40 py-10 absolute bottom-0 w-screen"
 });
 
 const footercontainer = tv({
-  base: "grid grid-cols-4 justify-items-center"
+  base: "grid md:grid-cols-4 md:justify-items-center"
 });
 
 const columncontainer = tv({
-  base: "flex flex-col"
+  base: "flex flex-col m-4"
 });
 
 const icon = tv({
@@ -32,7 +32,7 @@ const logocontainer = tv({
 });
 
 const socialscontainer = tv({
-  base: "flex space-x-4 mt-4"
+  base: "flex md:space-x-4 md:mt-4"
 });
 
 export const Footer = () => {

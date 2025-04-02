@@ -6,11 +6,11 @@ export interface SubtitleProps {
 };
 
 const subtitleStyles = tv({
-  base: "text-lg",
+  base: "text-lg relative z-10",
   variants: {
     variant: {
       primary: "text-blue-500 font-semibold",
-      secondary: "text-gray-500 italic"
+      secondary: "text-white italic"
     }
   }
 });

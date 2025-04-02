@@ -4,7 +4,7 @@ import { tv } from 'tailwind-variants';
 import { HeroSection } from '../components/templates/HeroSection';
 
 const appcontainer = tv({
-  base: ""
+  base: "flex flex-col min-h-screen grow"
 });
 
 export const App = () => {

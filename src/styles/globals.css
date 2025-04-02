@@ -12,10 +12,3 @@ body {
   overflow-x: auto;
   width: 100vw;
 }
-
-.appContainer {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  flex-grow: 1;
-}

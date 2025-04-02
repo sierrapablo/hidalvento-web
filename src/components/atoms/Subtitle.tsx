@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-interface SubtitleProps {
+export interface SubtitleProps {
   text: string;
   variant?: "primary" | "secondary";
 };

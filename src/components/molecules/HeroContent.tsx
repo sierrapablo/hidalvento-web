@@ -1,5 +1,5 @@
 import { tv } from 'tailwind-variants';
-import { Subtitle, SubtitleProps } from '../atoms/Subtitle';
+import { Subtitle, SubtitleProps } from '../atoms/Subtitle/Subtitle';
 
 
 export interface HeroContentProps {

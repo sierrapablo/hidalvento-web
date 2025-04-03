@@ -31,7 +31,7 @@ const focusedImgContainer = tv({
 });
 
 const focusedImgStyles = tv({
-  base: "max-h-[90vh] max-w-full rounded-lg object-contain cursor-auto"
+  base: "max-h-[90vh] max-w-full rounded-sm object-contain cursor-auto"
 });
 
 export const Gallery = () => {

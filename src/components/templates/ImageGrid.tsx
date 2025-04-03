@@ -1,5 +1,5 @@
 import { tv } from 'tailwind-variants';
-import { Image } from '../atoms/Image';
+import { Image } from '../atoms/Image/Image';
 
 interface ImageGridProps {
   images: { src: string; alt: string; }[];

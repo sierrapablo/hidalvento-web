@@ -18,7 +18,16 @@ import img9 from '../assets/images/DSC03722-Mejorado-NR.avif';
 import heroImg from '../assets/images/DSC03735-Mejorado-NR.avif'
 
 const focusedImgContainer = tv({
-  base: "fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 cursor-zoom-out"
+  base: "fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 cursor-zoom-out transition-opacity duration-700",
+  variants: {
+    fade: {
+      in: "opacity-100",
+      out: "opacity-0"
+    }
+  },
+  defaultVariants: {
+    fade: "in"
+  }
 });
 
 const focusedImgStyles = tv({
@@ -28,6 +37,8 @@ const focusedImgStyles = tv({
 export const Gallery = () => {
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const [fadeState, setFadeState] = useState<"in" | "out">("in");
 
   /* Imágenes importadas */
   const images = [
@@ -42,18 +53,34 @@ export const Gallery = () => {
     { src: img9, alt: "Imagen 9" }
   ];
 
+  const handleImageClick = (imgSrc: string) => {
+    setFadeState("out");
+    setSelectedImage(imgSrc);
+    setTimeout(() => {
+      setFadeState("in");
+    }, 0);
+  };
+
+  const handleClose = () => {
+    setFadeState("out");
+    setTimeout(() => {
+      setSelectedImage(null);
+      setFadeState("in");
+    }, 700);
+  };
+
   return (
     <>
       <Navbar />
       <HeroSection subtitle={{ text: "Nuestro trabajo en imágenes", variant: "secondary" }} image={heroImg} />
       <ImageGrid
         images={images}
-        onImageClick={(imgSrc) => setSelectedImage(imgSrc)}
+        onImageClick={handleImageClick}
       />
       {selectedImage && (
         <div
-          className={focusedImgContainer()}
-          onClick={() => setSelectedImage(null)}
+          className={focusedImgContainer({ fade: fadeState} )}
+          onClick={handleClose}
         >
           <img
             src={selectedImage}

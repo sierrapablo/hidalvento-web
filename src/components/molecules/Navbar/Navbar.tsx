@@ -1,13 +1,9 @@
-import { NavLink } from '../atoms/NavLink/NavLink';
-import { tv } from 'tailwind-variants';
-
-const navbar = tv({
-  base: "bg-white border-b-4 border-b-blue-100 p-2 w-full top-0 z-50 sticky flex justify-end"
-});
+import { NavLink } from '../../atoms/NavLink/NavLink';
+import { navbarStyles } from './navbarStyles';
 
 export const Navbar = () => {
   return (
-    <nav className={navbar()}>
+    <nav className={navbarStyles()}>
       <NavLink to="/" label="Inicio" />
       <NavLink to="/sobre-nosotros" label="Sobre Nosotros" />
       <NavLink to="/servicios" label="Servicios" />

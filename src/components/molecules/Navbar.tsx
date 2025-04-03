@@ -1,4 +1,4 @@
-import { NavLink } from '../atoms/NavLink';
+import { NavLink } from '../atoms/NavLink/NavLink';
 import { tv } from 'tailwind-variants';
 
 const navbar = tv({

@@ -18,5 +18,5 @@ export const focusedImgStyles = tv({
 });
 
 export const viewButtonStyles = tv({
-  base: "absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none"
+  base: "absolute top-4 right-4 text-white hover:text-hv-blue focus:outline-none ease-in-out transition duration-500"
 });

@@ -1,7 +1,7 @@
-import { Navbar } from '../components/molecules/Navbar';
-import { Footer } from '../components/molecules/Footer';
-import { HeroSection } from '../components/templates/HeroSection';
-import { ImageGrid } from '../components/templates/ImageGrid';
+import { Navbar } from '../components/molecules/Navbar/Navbar';
+import { Footer } from '../components/molecules/Footer/Footer';
+import { HeroSection } from '../components/templates/HeroSection/HeroSection';
+import { ImageGrid } from '../components/templates/ImageGrid/ImageGrid';
 import { useState } from 'react';
 import { tv } from 'tailwind-variants';
 

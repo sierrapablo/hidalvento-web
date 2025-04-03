@@ -3,12 +3,13 @@ import { Footer } from '../components/molecules/Footer/Footer';
 import { HeroSection } from '../components/templates/HeroSection/HeroSection';
 import { ImageGrid } from '../components/templates/ImageGrid/ImageGrid';
 import { useState } from 'react';
-import { tv } from 'tailwind-variants';
+import CloseIcon from '@mui/icons-material/Close';
+import { focusedImgContainer, focusedImgStyles, viewButtonStyles } from '../styles/galleryStyles';
 
 import img1 from '../assets/images/DSC03685-Mejorado-NR.avif';
 import img2 from '../assets/images/DSC03698-Mejorado-NR.avif';
 import img3 from '../assets/images/DSC03702-Mejorado-NR.avif';
-import img4 from '../assets/images/DSC03703-Mejorado-NR.avif'
+import img4 from '../assets/images/DSC03703-Mejorado-NR.avif';
 import img5 from '../assets/images/DSC03712-Mejorado-NR.avif';
 import img6 from '../assets/images/DSC03715-Mejorado-NR.avif';
 import img7 from '../assets/images/DSC03718-Mejorado-NR.avif';
@@ -16,23 +17,6 @@ import img8 from '../assets/images/DSC03720-Mejorado-NR.avif';
 import img9 from '../assets/images/DSC03722-Mejorado-NR.avif';
 
 import heroImg from '../assets/images/DSC03735-Mejorado-NR.avif'
-
-const focusedImgContainer = tv({
-  base: "fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 cursor-zoom-out transition-opacity duration-700",
-  variants: {
-    fade: {
-      in: "opacity-100",
-      out: "opacity-0"
-    }
-  },
-  defaultVariants: {
-    fade: "in"
-  }
-});
-
-const focusedImgStyles = tv({
-  base: "max-h-[90vh] max-w-full rounded-sm object-contain cursor-auto"
-});
 
 export const Gallery = () => {
 
@@ -79,9 +63,18 @@ export const Gallery = () => {
       />
       {selectedImage && (
         <div
-          className={focusedImgContainer({ fade: fadeState} )}
+          className={focusedImgContainer({ fade: fadeState })}
           onClick={handleClose}
         >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClose();
+            }}
+            className={viewButtonStyles()}
+          >
+            <CloseIcon fontSize="large" />
+          </button>
           <img
             src={selectedImage}
             alt="Zoom"

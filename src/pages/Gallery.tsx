@@ -4,7 +4,9 @@ import { HeroSection } from '../components/templates/HeroSection/HeroSection';
 import { ImageGrid } from '../components/templates/ImageGrid/ImageGrid';
 import { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import { focusedImgContainer, focusedImgStyles, viewButtonStyles } from '../styles/galleryStyles';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { focusedImgContainer, focusedImgContent, focusedImgStyles, viewButtonStyles } from '../styles/galleryStyles';
 
 import img1 from '../assets/images/DSC03685-Mejorado-NR.avif';
 import img2 from '../assets/images/DSC03698-Mejorado-NR.avif';
@@ -53,6 +55,20 @@ export const Gallery = () => {
     }, 700);
   };
 
+  const handleRight = () => {
+    if (!selectedImage) return;
+    const currentIndex = images.findIndex((img) => img.src === selectedImage);
+    const nextIndex = (currentIndex + 1) % images.length;
+    setSelectedImage(images[nextIndex].src);
+  };
+
+  const handleLeft = () => {
+    if (!selectedImage) return;
+    const currentIndex = images.findIndex((img) => img.src === selectedImage);
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+    setSelectedImage(images[prevIndex].src);
+  };
+
   return (
     <>
       <Navbar />
@@ -71,16 +87,36 @@ export const Gallery = () => {
               e.stopPropagation();
               handleClose();
             }}
-            className={viewButtonStyles()}
+            className={viewButtonStyles({ type: "close" })}
           >
             <CloseIcon fontSize="large" />
           </button>
-          <img
-            src={selectedImage}
-            alt="Zoom"
-            className={focusedImgStyles()}
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className={focusedImgContent()}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleLeft();
+              }}
+              className={viewButtonStyles({ type: "left" })}
+            >
+              <ArrowBackIosNewIcon fontSize="large" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleRight();
+              }}
+              className={viewButtonStyles({ type: "right" })}
+            >
+              <ArrowForwardIosIcon fontSize="large" />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Zoom"
+              className={focusedImgStyles()}
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
         </div>
       )}
       <Footer />

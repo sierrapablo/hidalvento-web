@@ -28,8 +28,8 @@ export const Footer = () => {
             Pl. Julio Verne 2, Esc. B, 7<br />
             46017 Valencia, España
           </a>
-          <a href="" className={labelStyles()}>+34 666 08 98 52</a>
-          <a href="" className={labelStyles()}>hola@hidalvento.es</a>
+          <a href="" className={labelStyles()}>+34 641 68 91 30</a>
+          <a href="" className={labelStyles()}>comercial@reformashidalvento.es</a>
           <Link to="/contacto" className={labelStyles()}>Contacto</Link>
         </div>
 

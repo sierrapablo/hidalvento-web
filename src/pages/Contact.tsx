@@ -7,29 +7,36 @@ import { useState } from 'react';
 
 import heroImg from '../assets/images/DSC03735-Mejorado-NR.avif'
 
+interface FormData {
+  contactName: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 export const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     contactName: '',
     email: '',
     subject: '',
     message: '',
   });
 
-  const handleChange = e => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData({
-      ...formData,
+    setFormData(prev => ({
+      ...prev,
       [name]: value
-    })
+    }));
   };
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const { contactName, subject, message } = formData
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { contactName, subject, message } = formData;
 
     const emailBody = encodeURIComponent(
       `Hola, soy ${contactName}.\n\n${message}`
-    )
+    );
     const mailtoLink = `mailto:comercial@reformashidalvento.com?subject=${encodeURIComponent(
       subject
     )}&body=${emailBody}`

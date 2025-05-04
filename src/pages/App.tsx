@@ -2,6 +2,9 @@ import { Navbar } from '../components/molecules/Navbar/Navbar';
 import { Footer } from '../components/molecules/Footer/Footer';
 import { HeroSection } from '../components/templates/HeroSection/HeroSection';
 
+import heroImg from '../assets/images/DSC03735-Mejorado-NR.avif'
+
+
 export const App = () => {
   return (
     <>
@@ -11,6 +14,7 @@ export const App = () => {
           text: "Tu reforma comienza aquí",
           variant: "secondary"
         }}
+        image={heroImg}
       />
       <Footer />
     </>

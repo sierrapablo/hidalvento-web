@@ -29,7 +29,7 @@ export const Footer = () => {
             46017 Valencia, España
           </a>
           <a href="" className={labelStyles()}>+34 641 68 91 30</a>
-          <a href="" className={labelStyles()}>comercial@reformashidalvento.es</a>
+          <a href="" className={labelStyles()}>comercial@reformashidalvento.com</a>
           <Link to="/contacto" className={labelStyles()}>Contacto</Link>
         </div>
 

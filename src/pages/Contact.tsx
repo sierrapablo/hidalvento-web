@@ -81,7 +81,7 @@ export const Contact = () => {
               rows={5}
             />
           </div>
-          <button type='button' className='formButton' onClick={handleSubmit}>
+          <button type='submit' className='formButton'>
             Contactar
           </button>
         </form>

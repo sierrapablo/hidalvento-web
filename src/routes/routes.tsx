@@ -4,7 +4,6 @@ import { App } from '../pages/App';
 // import { Services } from '../pages/Services';
 import { Gallery } from '../pages/Gallery';
 import { Contact } from '../pages/Contact';
-import { Maintenance } from '../pages/Maintenance';
 
 export const AppRouter = () => {
   return (

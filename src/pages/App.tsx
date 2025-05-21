@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navbar } from '../components/molecules/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/DSC03735-Mejorado-NR.avif'
+import mainLogo from '../assets/images/logo_white.png';
 
 const messages = [
   'Durante años, hemos convertido simples inmuebles en hogares en los que ahora, nuestros clientes disfrutan de aquello que antes solo imaginaban.',
@@ -40,10 +41,11 @@ export const App = () => {
           {/* Contenedor del bloque entero centrado */}
           <div className="max-w-3xl">
             {/* Título fijo */}
-            <h1 className="text-white text-5xl font-bold drop-shadow-lg mb-2">
-              HidalVento
-            </h1>
-
+            <img
+              src={mainLogo}
+              alt="Logo Hidalvento"
+              className="mx-auto mb-2 w-100"
+            />
             {/* Subtítulo fijo */}
             <h2 className="text-white text-base italic drop-shadow-md mb-20">
               Construimos lo que llevas años imaginando.
@@ -51,7 +53,7 @@ export const App = () => {
 
             {/* Mensaje rotativo con altura fija para evitar mover el botón */}
             <div className="mt-40 mb-40 h-20 flex items-center justify-center">
-              <p className="text-white text-2xl transition-opacity duration-1000 ease-in-out animate-fadein">
+              <p className="text-white text-2xl animate-fadein">
                 {messages[current]}
               </p>
             </div>

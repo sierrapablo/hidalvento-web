@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Navbar } from '../components/molecules/Navbar/Navbar';
+import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/DSC03735-Mejorado-NR.avif'
 
 const messages = [
@@ -56,12 +57,12 @@ export const App = () => {
             </div>
 
             {/* Botón "Descubre más" */}
-            <button
-              onClick={() => window.location.href = '/sobre-nosotros'}
-              className="px-6 py-3 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 transition"
+            <Link
+              to="/sobre-nosotros"
+              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 transition text-center"
             >
               Descubre más
-            </button>
+            </Link>
           </div>
 
         </div>

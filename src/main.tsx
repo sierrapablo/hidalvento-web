@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { AppRouter } from './routes/routes';
 import './styles/globals.css';
 import './styles/theme.css';
+import './styles/animations.css';
 
 const rootElement = document.getElementById("root");
 

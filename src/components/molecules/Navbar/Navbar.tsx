@@ -1,7 +1,9 @@
 import { NavLink } from '../../atoms/NavLink/NavLink';
 import { navbarStyles } from './navbarStyles';
 
+
 export const Navbar = () => {
+
   return (
     <nav className={navbarStyles()}>
       <NavLink to="/" label="Inicio" />

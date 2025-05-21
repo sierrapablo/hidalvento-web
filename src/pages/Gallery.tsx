@@ -70,7 +70,7 @@ export const Gallery = () => {
   };
 
   return (
-    <>
+    <div className='animate-fadein'>
       <Navbar />
       <HeroSection subtitle={{ text: "Nuestro trabajo en imágenes", variant: "secondary" }} image={heroImg} />
       <ImageGrid
@@ -120,6 +120,6 @@ export const Gallery = () => {
         </div>
       )}
       <Footer />
-    </>
+    </div>
   );
 };

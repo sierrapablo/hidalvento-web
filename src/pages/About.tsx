@@ -4,10 +4,10 @@ import { HeroSection } from '../components/templates/HeroSection/HeroSection';
 
 export const About = () => {
   return (
-    <>
+    <div className='animate-fadein'>
       <Navbar />
       <HeroSection subtitle={{ text: "Sobre Nosotros", variant: "secondary"}} />
       <Footer />
-    </>
+    </div>
   );
 };

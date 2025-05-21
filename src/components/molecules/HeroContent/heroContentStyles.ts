@@ -1,11 +1,11 @@
 import { tv } from 'tailwind-variants';
 
 export const heroContentStyles = tv({
-  base: "relative flex flex-col items-center justify-center text-center p-6 h-[500px] w-full overflow-hidden"
+  base: "relative flex flex-col items-center justify-center text-center p-6 h-dvh w-full overflow-hidden"
 });
 
 export const titleStyles = tv({
-  base: "text-4xl font-bold text-white relative z-10"
+  base: "w-100 text-4xl font-bold text-white relative z-10"
 });
 
 export const imageStyles = tv({

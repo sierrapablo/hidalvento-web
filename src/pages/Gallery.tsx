@@ -7,6 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { focusedImgContainer, focusedImgContent, focusedImgStyles, viewButtonStyles } from '../styles/galleryStyles';
+import mainLogo from '../assets/images/logo_white.png';
 
 import img1 from '../assets/images/DSC03685-Mejorado-NR.avif';
 import img2 from '../assets/images/DSC03698-Mejorado-NR.avif';

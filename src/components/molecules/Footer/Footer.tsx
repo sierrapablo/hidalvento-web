@@ -2,6 +2,7 @@ import { Facebook, X, Instagram, LinkedIn } from '@mui/icons-material';
 import { SocialIcon } from '../../atoms/SocialIcon/SocialIcon';
 import { Link } from 'react-router-dom';
 import { footerStyles, footerContainerStyles, columnContainerStyles, logoContainerStyles, iconStyles, socialsContainerStyles, labelStyles, titleStyles } from './footerStyles';
+import mainLogo from '../../../assets/images/logo_white.png';
 
 export const Footer = () => {
 
@@ -10,13 +11,13 @@ export const Footer = () => {
   );
 
   return (
-    <footer className={footerStyles()}>
+    <footer className={footerStyles()} style={{ height: 'calc(100dvh - 56px)' }}>
       <div className={footerContainerStyles()}>
 
         {/* Logo y Redes Sociales */}
         <div className={columnContainerStyles()}>
           <div className={logoContainerStyles()}>
-            <img src="" alt="HidalVento" className={iconStyles()} />
+            <img src={mainLogo} alt="HidalVento" className={iconStyles()} />
           </div>
           <div className={socialsContainerStyles()}>
             <SocialIcon Icon={Facebook} href="https://facebook.com" />

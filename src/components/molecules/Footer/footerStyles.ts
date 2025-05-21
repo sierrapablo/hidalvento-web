@@ -13,7 +13,7 @@ export const columnContainerStyles = tv({
 });
 
 export const iconStyles = tv({
-  base: ""
+  base: "lg:w-80 md:w-50 w-30"
 });
 
 export const labelStyles = tv({

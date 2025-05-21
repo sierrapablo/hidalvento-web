@@ -6,7 +6,7 @@ export const About = () => {
   return (
     <>
       <Navbar />
-      <HeroSection subtitle={{ text: "Pasión por los pequeños detalles" }} />
+      <HeroSection subtitle={{ text: "Sobre Nosotros", variant: "secondary"}} />
       <Footer />
     </>
   );

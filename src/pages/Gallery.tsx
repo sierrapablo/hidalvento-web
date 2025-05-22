@@ -18,7 +18,7 @@ import img7 from '../assets/images/DSC03718-Mejorado-NR.avif';
 import img8 from '../assets/images/DSC03720-Mejorado-NR.avif';
 import img9 from '../assets/images/DSC03722-Mejorado-NR.avif';
 
-import heroImg from '../assets/images/DSC03735-Mejorado-NR.avif'
+import heroImg from '../assets/images/DSC03729-Mejorado-NR.avif'
 
 export const Gallery = () => {
 

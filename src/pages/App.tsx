@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Navbar } from '../components/molecules/Navbar/Navbar';
 import { Link } from 'react-router-dom';
-import heroImg from '../assets/images/DSC03735-Mejorado-NR.avif'
+import heroImg from '../assets/images/DSC03729-Mejorado-NR.avif'
 import mainLogo from '../assets/images/logo_white.png';
 
 const messages = [
@@ -34,7 +34,7 @@ export const App = () => {
         />
 
         {/* Capa de oscurecimiento */}
-        <div className="absolute top-[56px] left-0 w-full h-[calc(100dvh-56px)] bg-black/50 z-10" />
+        <div className="absolute top-[56px] left-0 w-full h-[calc(100dvh-56px)] bg-black/60 z-10" />
 
         <div className="absolute top-[56px] left-0 w-full h-[calc(100dvh-56px)] z-20 flex flex-col items-center justify-center text-center px-4">
 
@@ -61,7 +61,7 @@ export const App = () => {
             {/* Botón "Descubre más" */}
             <Link
               to="/sobre-nosotros"
-              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 transition text-center"
+              className="inline-block px-6 py-3 bg-hv-blue text-white font-bold rounded-md shadow-lg hover:bg-hv-light-blue hover:text-hv-blue transition duration-500 ease-in-out text-center"
             >
               Descubre más
             </Link>

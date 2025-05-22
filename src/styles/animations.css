@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --animate-fadein: fade-in 1s ease-in;
+  --animate-fadein: fade-in 1s ease-in-out;
 
   @keyframes fade-in {
     0% {

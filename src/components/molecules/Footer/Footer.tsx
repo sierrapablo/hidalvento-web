@@ -1,17 +1,21 @@
 import { Facebook, X, Instagram, LinkedIn } from '@mui/icons-material';
 import { SocialIcon } from '../../atoms/SocialIcon/SocialIcon';
 import { Link } from 'react-router-dom';
-import { footerStyles, footerContainerStyles, columnContainerStyles, logoContainerStyles, iconStyles, socialsContainerStyles, labelStyles, titleStyles } from './footerStyles';
+import { footerContainerStyles, columnContainerStyles, logoContainerStyles, iconStyles, socialsContainerStyles, labelStyles, titleStyles } from './footerStyles';
 import mainLogo from '../../../assets/images/logo_white.png';
 
-export const Footer = () => {
+interface FooterProps {
+  className?: string;
+};
+
+export const Footer: React.FC<FooterProps> = ({className}) => {
 
   const mapsUrl = encodeURI(
     'https://www.google.com/maps/search/?api=1&query=Pl. Julio Verne 2, Esc. B, 7, 46017 Valencia, España'
   );
 
   return (
-    <footer className={footerStyles()} style={{ height: 'calc(100dvh - 56px)' }}>
+    <footer className={`bg-hv-blue lg:px-40 py-10 w-full ${className}`} style={{ height: 'calc(100dvh - 56px)' }}>
       <div className={footerContainerStyles()}>
 
         {/* Logo y Redes Sociales */}

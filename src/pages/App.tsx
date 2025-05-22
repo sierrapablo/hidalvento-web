@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Navbar } from '../components/molecules/Navbar/Navbar';
 import { Footer } from '../components/molecules/Footer/Footer';
 import { Link } from 'react-router-dom';
@@ -13,18 +13,89 @@ const messages = [
 
 export const App = () => {
   const [current, setCurrent] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % messages.length);
-    }, 7500);
+      setIsVisible(false); // Empieza fade-out
+
+      setTimeout(() => {
+        setCurrent((prev) => (prev + 1) % messages.length);
+        setIsVisible(true); // Empieza fade-in
+      }, 1000); // Tiempo de fade-out antes de cambiar el mensaje
+
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
 
+  const [showFooter, setShowFooter] = useState(false);
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const touchStartY = useRef<number | null>(null);
+
+  const showFooterTemporarily = (show: boolean) => {
+    setShowFooter(show);
+
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+
+    scrollTimeout.current = setTimeout(() => {
+      setShowFooter(false);
+    }, 10000);
+  };
+
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY > 10) {
+        showFooterTemporarily(true);
+      } else if (e.deltaY < -10) {
+        showFooterTemporarily(false);
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown') {
+        showFooterTemporarily(true);
+      } else if (e.key === 'ArrowUp') {
+        showFooterTemporarily(false);
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY.current = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (touchStartY.current === null) return;
+
+      const touchEndY = e.touches[0].clientY;
+      const deltaY = touchStartY.current - touchEndY;
+
+      if (deltaY > 10) {
+        // Desliza hacia arriba
+        showFooterTemporarily(true);
+      } else if (deltaY < -10) {
+        // Desliza hacia abajo
+        showFooterTemporarily(false);
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    };
+  }, []);
+
   return (
     <>
-      <div className="relative w-full h-dvh animate-fadein">
+      <div className="relative w-full h-dvh animate-fadein overflow-hidden">
         <Navbar />
 
         <img
@@ -54,7 +125,7 @@ export const App = () => {
 
             {/* Mensaje rotativo con altura fija para evitar mover el botón */}
             <div className="mt-40 mb-40 h-20 flex items-center justify-center">
-              <p className="text-white text-2xl">
+              <p className={`text-white text-2xl transition-opacity duration-500 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 {messages[current]}
               </p>
             </div>
@@ -69,7 +140,7 @@ export const App = () => {
           </div>
 
         </div>
-      <Footer />
+        <Footer className={`fixed bottom-0 left-0 w-full transition-transform duration-700 z-30 ${showFooter ? 'translate-y-0' : 'translate-y-full'}`} />
       </div>
     </>
   );

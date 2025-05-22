@@ -5,5 +5,5 @@ export const imageGridStyles = tv({
 });
 
 export const imageContainerStyles = tv({
-  base: "relative w-full h-full overflow-hidden rounded-sm cursor-pointer transition-ease-in-out duration-500 border-2 border-white hover:border-hv-blue"
+  base: "relative w-full h-full space-x-6 overflow-hidden rounded-sm cursor-pointer transition-ease-in-out duration-500 border-2 border-white hover:border-hv-blue"
 });

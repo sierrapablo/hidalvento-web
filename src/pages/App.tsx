@@ -4,14 +4,37 @@ import { Footer } from '../components/molecules/Footer/Footer';
 import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/DSC03729-Mejorado-NR.avif'
 import mainLogo from '../assets/images/logo_white.png';
+import mainLogoBlue from '../assets/images/logo_blue.png';
 
 const messages = [
   'Durante años, hemos convertido simples inmuebles en hogares en los que ahora, nuestros clientes disfrutan de aquello que antes solo imaginaban.',
   'Una buena reforma integral es un proceso que empieza por escuchar a nuestro cliente y presentarle soluciones a medida, asesorarle en la elección de materiales de primera calidad y brindarle un abanico de profesionales que cubrirán todas sus necesidades.',
-  'Pero cuando el último detalle está acabado, nuestro trabajo continúa estando a su disposición para cualquier pequeña reparación.',
+  'Cuando el último detalle está acabado, nuestro trabajo continúa estando a su disposición para cualquier pequeña reparación.',
 ];
 
 export const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showCurtain, setShowCurtain] = useState(true);
+
+  useEffect(() => {
+    const loadImage = new Promise<void>((resolve) => {
+      const img = new Image();
+      img.src = heroImg;
+      img.onload = () => resolve();
+    });
+
+    const waitMinimumTime = new Promise<void>((resolve) => {
+      setTimeout(resolve, 3500); // Tiempo mínimo de trigger
+    });
+
+    Promise.all([loadImage, waitMinimumTime]).then(() => {
+      setIsLoading(false); // dispara animación del telón
+      setTimeout(() => {
+        setShowCurtain(false); // quita el telón del DOM después de animar
+      }, 1000); // tiempo de animación
+    });
+  }, []);
+
   const [current, setCurrent] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -72,10 +95,10 @@ export const App = () => {
 
       if (deltaY > 10) {
         // Desliza hacia arriba
-        showFooterTemporarily(true);
+        showFooterTemporarily(true); // Hacia arriba muestra el footer
       } else if (deltaY < -10) {
         // Desliza hacia abajo
-        showFooterTemporarily(false);
+        showFooterTemporarily(false); // Hacia abajo oculta el footer
       }
     };
 
@@ -95,9 +118,19 @@ export const App = () => {
 
   return (
     <>
-      <div className="relative w-full h-dvh animate-fadein overflow-hidden">
+      <div className="relative w-full h-dvh overflow-hidden">
         <Navbar />
-
+        {/* Telón blanco animado */}
+        {showCurtain && (
+          <div
+            className={`flex justify-center items-center fixed top-0 left-0 w-full h-full bg-white z-50 transition-transform duration-1000 ease-in-out ${isLoading ? 'translate-y-0' : 'translate-y-full'}`}
+          >
+            <img
+              src={mainLogoBlue}
+              className="w-full animate-fadein"
+            />
+          </div>
+        )}
         <img
           src={heroImg}
           alt="HidalVento"

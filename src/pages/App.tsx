@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Navbar } from '../components/molecules/Navbar/Navbar';
+import { Footer } from '../components/molecules/Footer/Footer';
 import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/DSC03729-Mejorado-NR.avif'
 import mainLogo from '../assets/images/logo_white.png';
@@ -53,7 +54,7 @@ export const App = () => {
 
             {/* Mensaje rotativo con altura fija para evitar mover el botón */}
             <div className="mt-40 mb-40 h-20 flex items-center justify-center">
-              <p className="text-white text-2xl animate-fadein">
+              <p className="text-white text-2xl">
                 {messages[current]}
               </p>
             </div>
@@ -68,7 +69,7 @@ export const App = () => {
           </div>
 
         </div>
-
+      <Footer />
       </div>
     </>
   );

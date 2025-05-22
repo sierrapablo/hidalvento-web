@@ -8,7 +8,7 @@ interface ImageGridProps {
 
 export const ImageGrid: React.FC<ImageGridProps> = ({ images, onImageClick }) => {
   return (
-    <div className={imageGridStyles()}>
+    <div className={imageGridStyles()} style={{ height: 'calc(100dvh - 56px)' }}>
       {images.map((image, index) => (
         <div
           key={index}

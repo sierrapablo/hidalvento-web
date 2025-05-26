@@ -125,7 +125,7 @@ export const App = () => {
   return (
     <>
       <div className="relative w-full h-dvh overflow-hidden">
-        <Navbar />
+        {/* <Navbar /> */}
         {/* Telón blanco animado */}
         {showCurtain && (
           <div
@@ -140,14 +140,14 @@ export const App = () => {
         <img
           src={heroImg}
           alt="HidalVento"
-          className="w-full object-cover"
-          style={{ height: 'calc(100dvh - 56px)' }}
+          className="w-full object-cover h-dvh"
+          // style={{ height: 'calc(100dvh - 56px)' }}}
         />
 
         {/* Capa de oscurecimiento */}
-        <div className="absolute top-[56px] left-0 w-full h-[calc(100dvh-56px)] bg-black/60 z-10" />
+        <div className="absolute top-0 left-0 w-full h-dvh bg-black/60 z-10" /> // h-[calc(100dvh-56px)] top-[56px]
 
-        <div className="absolute top-[56px] left-0 w-full h-[calc(100dvh-56px)] z-20 flex flex-col items-center justify-center text-center px-4">
+        <div className="absolute top-0 left-0 w-full h-dvh z-20 flex flex-col items-center justify-center text-center px-4">
 
           {/* Contenedor del bloque entero centrado */}
           <div className="max-w-3xl">
@@ -155,10 +155,10 @@ export const App = () => {
             <img
               src={mainLogo}
               alt="Logo Hidalvento"
-              className="mx-auto mb-2 w-100"
+              className="mx-auto mb-2 w-200"
             />
             {/* Subtítulo fijo */}
-            <h2 className="text-white text-base italic drop-shadow-md mb-20" style={{ fontFamily: 'Jakarta Plus', fontWeight: 700 }}>
+            <h2 className="text-white text-base italic drop-shadow-md mb-20 h-20" style={{ fontFamily: 'Jakarta Plus', fontWeight: 700 }}>
               Construimos lo que llevas años imaginando.
             </h2>
 
@@ -183,7 +183,7 @@ export const App = () => {
           </div>
 
         </div>
-        <Footer className={`fixed bottom-0 left-0 w-full transition-transform duration-700 z-30 ${showFooter ? 'translate-y-0' : 'translate-y-full'}`} />
+        {/* <Footer className={`fixed bottom-0 left-0 w-full transition-transform duration-700 z-30 ${showFooter ? 'translate-y-0' : 'translate-y-full'}`} /> */}
       </div>
     </>
   );

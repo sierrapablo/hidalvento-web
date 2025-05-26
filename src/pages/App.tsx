@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
-import { Navbar } from '../components/molecules/Navbar/Navbar';
-import { Footer } from '../components/molecules/Footer/Footer';
+// import { Navbar } from '../components/molecules/Navbar/Navbar';
+// import { Footer } from '../components/molecules/Footer/Footer';
 import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/DSC03729-Mejorado-NR.avif'
 import mainLogo from '../assets/images/logo_white.png';
@@ -54,7 +54,7 @@ export const App = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const [showFooter, setShowFooter] = useState(false);
+  // const [showFooter, setShowFooter] = useState(false);
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   // const touchStartY = useRef<number | null>(null);
 

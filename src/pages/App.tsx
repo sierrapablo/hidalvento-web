@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
+// import { useRef } from 'react';
 // import { Navbar } from '../components/molecules/Navbar/Navbar';
 // import { Footer } from '../components/molecules/Footer/Footer';
 import { Link } from 'react-router-dom';
@@ -55,9 +56,10 @@ export const App = () => {
   }, []);
 
   // const [showFooter, setShowFooter] = useState(false);
-  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   // const touchStartY = useRef<number | null>(null);
 
+  /*
   const showFooterTemporarily = (show: boolean) => {
     setShowFooter(show);
 
@@ -84,43 +86,44 @@ export const App = () => {
         showFooterTemporarily(false);
       }
     };
-
-    // useEffect para desplegar el footer con toques en pantallas táctiles
-
-    /*
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartY.current = e.touches[0].clientY;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (touchStartY.current === null) return;
-
-      const touchEndY = e.touches[0].clientY;
-      const deltaY = touchStartY.current - touchEndY;
-
-      if (deltaY > 100) {
-        // Desliza hacia arriba
-        showFooterTemporarily(true); // Hacia arriba muestra el footer
-      } else if (deltaY < -10) {
-        // Desliza hacia abajo
-        showFooterTemporarily(false); // Hacia abajo oculta el footer
-      }
-    };
     */
 
-    window.addEventListener('wheel', handleWheel);
-    window.addEventListener('keydown', handleKeyDown);
-    // window.addEventListener('touchstart', handleTouchStart);
-    // window.addEventListener('touchmove', handleTouchMove);
+  // useEffect para desplegar el footer con toques en pantallas táctiles
 
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('keydown', handleKeyDown);
-      // window.removeEventListener('touchstart', handleTouchStart);
-      // window.removeEventListener('touchmove', handleTouchMove);
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-    };
-  }, []);
+  /*
+  const handleTouchStart = (e: TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    if (touchStartY.current === null) return;
+
+    const touchEndY = e.touches[0].clientY;
+    const deltaY = touchStartY.current - touchEndY;
+
+    if (deltaY > 100) {
+      // Desliza hacia arriba
+      showFooterTemporarily(true); // Hacia arriba muestra el footer
+    } else if (deltaY < -10) {
+      // Desliza hacia abajo
+      showFooterTemporarily(false); // Hacia abajo oculta el footer
+    }
+  };
+
+  // window.addEventListener('wheel', handleWheel);
+  // window.addEventListener('keydown', handleKeyDown);
+  // window.addEventListener('touchstart', handleTouchStart);
+  // window.addEventListener('touchmove', handleTouchMove);
+
+  return () => {
+    // window.removeEventListener('wheel', handleWheel);
+    // window.removeEventListener('keydown', handleKeyDown);
+    // window.removeEventListener('touchstart', handleTouchStart);
+    // window.removeEventListener('touchmove', handleTouchMove);
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+  };
+}, []);
+*/
 
   return (
     <>
@@ -141,7 +144,7 @@ export const App = () => {
           src={heroImg}
           alt="HidalVento"
           className="w-full object-cover h-dvh"
-          // style={{ height: 'calc(100dvh - 56px)' }}}
+        // style={{ height: 'calc(100dvh - 56px)' }}}
         />
 
         {/* Capa de oscurecimiento */}

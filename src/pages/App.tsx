@@ -6,6 +6,8 @@ import heroImg from '../assets/images/DSC03729-Mejorado-NR.avif'
 import mainLogo from '../assets/images/logo_white.png';
 import mainLogoBlue from '../assets/images/logo_blue.png';
 
+import '../styles/fonts.css';
+
 const messages = [
   'Durante años, hemos convertido simples inmuebles en hogares en los que ahora, nuestros clientes disfrutan de aquello que antes solo imaginaban.',
   'Una buena reforma integral es un proceso que empieza por escuchar a nuestro cliente y presentarle soluciones a medida, asesorarle en la elección de materiales de primera calidad y brindarle un abanico de profesionales que cubrirán todas sus necesidades.',
@@ -156,13 +158,16 @@ export const App = () => {
               className="mx-auto mb-2 w-100"
             />
             {/* Subtítulo fijo */}
-            <h2 className="text-white text-base italic drop-shadow-md mb-20">
+            <h2 className="text-white text-base italic drop-shadow-md mb-20" style={{ fontFamily: 'Jakarta Plus', fontWeight: 700 }}>
               Construimos lo que llevas años imaginando.
             </h2>
 
             {/* Mensaje rotativo con altura fija para evitar mover el botón */}
             <div className="mt-40 mb-40 h-20 flex items-center justify-center">
-              <p className={`text-white text-2xl transition-opacity duration-500 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+              <p
+                className={`text-white text-2xl transition-opacity duration-500 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+                style={{ fontFamily: 'Jakarta Plus', fontWeight: 700 }}
+              >
                 {messages[current]}
               </p>
             </div>
@@ -170,7 +175,8 @@ export const App = () => {
             {/* Botón "Descubre más" */}
             <Link
               to="/sobre-nosotros"
-              className="inline-block px-6 py-3 bg-hv-blue text-white font-bold rounded-md shadow-lg hover:bg-hv-light-blue hover:text-hv-blue transition duration-500 ease-in-out text-center"
+              className="inline-block px-6 py-3 bg-hv-blue text-white rounded-md shadow-lg hover:bg-hv-light-blue hover:text-hv-blue transition duration-500 ease-in-out text-center"
+              style={{ fontFamily: 'Jakarta Plus', fontWeight: 700 }}
             >
               Descubre más
             </Link>

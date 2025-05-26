@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({className}) => {
 
         {/* Tarjeta de contacto */}
         <div className={columnContainerStyles()}>
-          <a className={titleStyles()}>Contacto</a>
+          <a className={titleStyles()} >Contacto</a>
           <a href={mapsUrl} target='_blank' rel='noopener noreferrer' className={labelStyles()}>
             Pl. Julio Verne 2, Esc. B, 7<br />
             46017 Valencia, España
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({className}) => {
 
         {/* Links a servicios */}
         <div className={columnContainerStyles()}>
-          <a className={titleStyles()}>Servicios</a>
+          <a className={titleStyles()} style={{ fontFamily: 'Jakarta Plus', fontWeight: 700 }}>Servicios</a>
           <a href="" className={labelStyles()}>Reformas</a>
           <a href="" className={labelStyles()}>Fontanería</a>
           <a href="" className={labelStyles()}>Electricidad</a>

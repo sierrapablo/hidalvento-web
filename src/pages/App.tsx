@@ -24,7 +24,7 @@ export const App = () => {
     });
 
     const waitMinimumTime = new Promise<void>((resolve) => {
-      setTimeout(resolve, 3500); // Tiempo mínimo de trigger
+      setTimeout(resolve, 1000); // Tiempo mínimo de trigger
     });
 
     Promise.all([loadImage, waitMinimumTime]).then(() => {
@@ -54,7 +54,7 @@ export const App = () => {
 
   const [showFooter, setShowFooter] = useState(false);
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const touchStartY = useRef<number | null>(null);
+  // const touchStartY = useRef<number | null>(null);
 
   const showFooterTemporarily = (show: boolean) => {
     setShowFooter(show);
@@ -69,20 +69,23 @@ export const App = () => {
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       if (e.deltaY > 10) {
-        showFooterTemporarily(true);
-      } else if (e.deltaY < -10) {
         showFooterTemporarily(false);
+      } else if (e.deltaY < -10) {
+        showFooterTemporarily(true);
       }
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowDown') {
+      if (e.key === 'ArrowUp') {
         showFooterTemporarily(true);
-      } else if (e.key === 'ArrowUp') {
+      } else if (e.key === 'ArrowDown') {
         showFooterTemporarily(false);
       }
     };
 
+    // useEffect para desplegar el footer con toques en pantallas táctiles
+
+    /*
     const handleTouchStart = (e: TouchEvent) => {
       touchStartY.current = e.touches[0].clientY;
     };
@@ -93,7 +96,7 @@ export const App = () => {
       const touchEndY = e.touches[0].clientY;
       const deltaY = touchStartY.current - touchEndY;
 
-      if (deltaY > 10) {
+      if (deltaY > 100) {
         // Desliza hacia arriba
         showFooterTemporarily(true); // Hacia arriba muestra el footer
       } else if (deltaY < -10) {
@@ -101,17 +104,18 @@ export const App = () => {
         showFooterTemporarily(false); // Hacia abajo oculta el footer
       }
     };
+    */
 
     window.addEventListener('wheel', handleWheel);
     window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchmove', handleTouchMove);
+    // window.addEventListener('touchstart', handleTouchStart);
+    // window.addEventListener('touchmove', handleTouchMove);
 
     return () => {
       window.removeEventListener('wheel', handleWheel);
       window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
+      // window.removeEventListener('touchstart', handleTouchStart);
+      // window.removeEventListener('touchmove', handleTouchMove);
       if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
     };
   }, []);
@@ -127,7 +131,7 @@ export const App = () => {
           >
             <img
               src={mainLogoBlue}
-              className="w-full animate-fadein"
+              className="w-full"
             />
           </div>
         )}

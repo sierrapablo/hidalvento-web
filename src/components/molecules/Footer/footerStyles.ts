@@ -1,11 +1,11 @@
 import { tv } from 'tailwind-variants';
 
 export const footerStyles = tv({
-  base: "bg-hv-blue lg:px-40 py-10 w-full"
+  base: "bg-hv-blue lg:px-40 py-16 w-full"
 });
 
 export const footerContainerStyles = tv({
-  base: "grid md:grid-cols-4 md:justify-items-center gap-4"
+  base: "grid md:grid-cols-4 md:justify-items-center gap-4 mt-12"
 });
 
 export const columnContainerStyles = tv({

@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({className}) => {
   );
 
   return (
-    <footer className={`bg-hv-blue lg:px-40 py-10 w-full ${className}`} style={{ height: 'calc(100dvh - 56px)' }}>
+    <footer className={`bg-hv-blue lg:px-40 py-10 w-full ${className}`} style={{ height: 'calc(100dvh)' }}>
       <div className={footerContainerStyles()}>
 
         {/* Logo y Redes Sociales */}

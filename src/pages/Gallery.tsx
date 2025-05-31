@@ -4,6 +4,8 @@ import { HeroSection } from '../components/templates/HeroSection/HeroSection';
 import { ImageGrid } from '../components/templates/ImageGrid/ImageGrid';
 import { useState } from 'react';
 import { SectionWrapper } from '../components/templates/SectionWrapper/SectionWrapper';
+import CTAContact from '../components/templates/CTAContact/CTAContact';
+
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -124,7 +126,12 @@ export const Gallery = () => {
           </div>
         </div>
       )}
-      <SectionWrapper index={3}>
+
+      <SectionWrapper index={20}>
+        <CTAContact />
+      </SectionWrapper>
+
+      <SectionWrapper index={100}>
       <Footer />
       </SectionWrapper>
     </div>

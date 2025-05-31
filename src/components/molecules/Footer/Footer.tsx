@@ -8,7 +8,7 @@ interface FooterProps {
   className?: string;
 };
 
-export const Footer: React.FC<FooterProps> = ({className}) => {
+export const Footer: React.FC<FooterProps> = ({ className }) => {
 
   const mapsUrl = encodeURI(
     'https://www.google.com/maps/search/?api=1&query=Pl. Julio Verne 2, Esc. B, 7, 46017 Valencia, España'
@@ -55,13 +55,13 @@ export const Footer: React.FC<FooterProps> = ({className}) => {
         {/* Links a servicios */}
         <div className={columnContainerStyles()}>
           <a className={titleStyles()} style={{ fontFamily: 'Jakarta Plus', fontWeight: 700 }}>Servicios</a>
-          <a href="" className={labelStyles()}>Reformas</a>
-          <a href="" className={labelStyles()}>Fontanería</a>
-          <a href="" className={labelStyles()}>Electricidad</a>
-          <a href="" className={labelStyles()}>Pintura</a>
-          <a href="" className={labelStyles()}>Ventanas</a>
-          <a href="" className={labelStyles()}>Suelo</a>
-          <a href="" className={labelStyles()}>Ducha</a>
+          <Link to="/servicios" className={labelStyles()}>Reformas</Link>
+          <Link to="/servicios" className={labelStyles()}>Fontanería</Link>
+          <Link to="/servicios" className={labelStyles()}>Electricidad</Link>
+          <Link to="/servicios" className={labelStyles()}>Pintura</Link>
+          <Link to="/servicios" className={labelStyles()}>Ventanas</Link>
+          <Link to="/servicios" className={labelStyles()}>Suelo</Link>
+          <Link to="/servicios" className={labelStyles()}>Ducha</Link>
         </div>
 
       </div>

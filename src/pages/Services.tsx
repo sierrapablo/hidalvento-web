@@ -3,6 +3,7 @@ import { Footer } from '../components/molecules/Footer/Footer';
 import { HeroSection } from '../components/templates/HeroSection/HeroSection';
 import { ImageTextSection } from '../components/molecules/ImageTextSection/ImageTextSection';
 import { SectionWrapper } from '../components/templates/SectionWrapper/SectionWrapper';
+import CTAContact from '../components/templates/CTAContact/CTAContact';
 
 import heroImg from '../assets/images/DSC03729-Mejorado-NR.avif'
 
@@ -99,8 +100,12 @@ estética de tu baño, sino que también es una opción más práctica y accesib
         />
       </SectionWrapper>
 
-      <SectionWrapper index={11}>
-      <Footer />
+      <SectionWrapper index={20}>
+        <CTAContact />
+      </SectionWrapper>
+
+      <SectionWrapper index={100}>
+        <Footer />
       </SectionWrapper>
 
     </>

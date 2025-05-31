@@ -1,18 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import contactImage from "../../../assets/images/DSC03720-Mejorado-NR.avif";
 
-/**
- * A responsive call-to-action section that redirects users to the contact page.
- * Displays text and a button on the left, and an image on the right (stacked on small screens).
- */
 const CTAContact: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/contacto");
-  };
 
   return (
     <section className="flex flex-col md:flex-row w-full h-dvh bg-hv-blue">

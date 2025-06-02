@@ -177,11 +177,11 @@ export const App = () => {
 
             {/* Botón "Descubre más" */}
             <Link
-              to="/sobre-nosotros"
+              to="/servicios"
               className="inline-block px-20 py-3 bg-hv-blue text-white rounded-3xl shadow-lg hover:bg-hv-light-blue hover:text-hv-blue hover:shadow-[0_0_20px_5px_theme('colors.amber.50')] transition duration-500 ease-in-out text-center"
               style={{ fontFamily: 'Jakarta Plus', fontWeight: 700 }}
             >
-              Descubre más
+              Descubre nuestros servicios
             </Link>
           </div>
 

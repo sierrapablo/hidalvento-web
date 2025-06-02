@@ -29,7 +29,7 @@ export const Navbar = () => {
       {/* Enlaces normales (desktop) */}
       <div className="hidden md:flex gap-2 ml-auto items-center">
         <NavLink to="/" label="Inicio" />
-        <NavLink to="/sobre-nosotros" label="Sobre Nosotros" />
+        {/* <NavLink to="/sobre-nosotros" label="Sobre Nosotros" /> */}
         <NavLink to="/servicios" label="Servicios" />
         <NavLink to="/galeria" label="Galería" />
         <NavLink to="/contacto" label="Contacto" />

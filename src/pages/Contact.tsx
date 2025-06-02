@@ -43,8 +43,7 @@ export const Contact = () => {
     e.preventDefault();
     const { contactName, message } = formData;
 
-    // Número de teléfono con código internacional sin símbolos ni espacios (ejemplo para España)
-    const phoneNumber = '34600111222';
+    const phoneNumber = '34641689130';
 
     // Mensaje formateado para WhatsApp
     const whatsappMessage = encodeURIComponent(`Hola, soy ${contactName}. ${message}`);

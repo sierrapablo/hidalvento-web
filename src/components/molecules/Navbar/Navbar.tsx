@@ -39,7 +39,7 @@ export const Navbar = () => {
       {isMenuOpen && (
         <div className="absolute top-14 left-0 w-full bg-white shadow-md flex flex-col items-start gap-3 px-4 py-6 md:hidden z-40">
           <NavLink to="/" label="Inicio" />
-          <NavLink to="/sobre-nosotros" label="Sobre Nosotros" />
+          {/* <NavLink to="/sobre-nosotros" label="Sobre Nosotros" /> */}
           <NavLink to="/servicios" label="Servicios" />
           <NavLink to="/galeria" label="Galería" />
           <NavLink to="/contacto" label="Contacto" />

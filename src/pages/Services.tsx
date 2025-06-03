@@ -9,7 +9,7 @@ import heroImg from '../assets/images/DSC03729-Mejorado-NR.avif'
 
 import reformasImg from '../assets/images/reformas_integrales.jpg';
 import ventanasImg from '../assets/images/cambio_ventanas.jpg';
-import suelosAfterImg from '../assets/images/cambio_suelo_despues.png';
+import suelosAfterImg from '../assets/images/cambio_suelo_despues.jpeg';
 import puertasImg from '../assets/images/cambio_puertas.jpg';
 import paredesImg from '../assets/images/alisado_paredes.jpg';
 import fontaneriaImg from '../assets/images/fontaneria.jpg';

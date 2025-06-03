@@ -62,7 +62,7 @@ export const Contact = () => {
         />
       </SectionWrapper>
       <SectionWrapper index={10}>
-        <div className="flex justify-center items-center py-20 px-4 min-h-screen bg-white">
+        <div className="flex justify-center items-center py-20 px-4 min-h-screen">
           <form
             onSubmit={handleEmailSubmit} // El submit por defecto será email
             className="w-full max-w-xl bg-white shadow-md rounded-lg p-8"
